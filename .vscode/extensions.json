@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+    "kisstkondoros.vscode-gutter-preview",
+    "YoavBls.pretty-ts-errors"
+  ]
+}
