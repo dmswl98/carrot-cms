@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@carrot-cms/typescript-config/ui",
   "compilerOptions": {
     "outDir": "dist"
   },

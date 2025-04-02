@@ -1,0 +1,5 @@
+{
+  "extends": "@carrot-cms/typescript-config/client.json",
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}
