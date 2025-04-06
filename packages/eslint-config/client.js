@@ -28,17 +28,13 @@ export const config = [
   {
     plugins: {
       "react-hooks": pluginReactHooks,
-      // "react-refresh": pluginReactRefresh,
+      "react-refresh": pluginReactRefresh,
       "simple-import-sort": pluginSimpleImportSort,
     },
     settings: { react: { version: "detect" } },
     rules: {
       ...pluginReactHooks.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
       "simple-import-sort/imports": "warn",
       "simple-import-sort/exports": "warn",
       "import/named": "off",
