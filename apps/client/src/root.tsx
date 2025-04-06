@@ -1,9 +1,16 @@
 import "./index.css";
 
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { isRouteErrorResponse } from "react-router";
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "react-router";
 
 import { type Route } from "../.react-router/types/src/+types/root";
+import QueryClientProvider from "./providers/QueryClientProvider";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -35,7 +42,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <QueryClientProvider>
+      <Outlet />
+    </QueryClientProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
