@@ -3,6 +3,7 @@
     "dbaeumer.vscode-eslint",
     "usernamehw.errorlens",
     "kisstkondoros.vscode-gutter-preview",
-    "YoavBls.pretty-ts-errors"
+    "YoavBls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss"
   ]
 }
