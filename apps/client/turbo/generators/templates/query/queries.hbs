@@ -1,0 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
+
+import { {{ upperCase query-name }}_QUERY_KEY } from './queryKey';
+
+export const useGet{{ pascalCase query-name }} = () =>
+  useQuery({
+    queryKey: [],
+    queryFn: () => {},
+  });

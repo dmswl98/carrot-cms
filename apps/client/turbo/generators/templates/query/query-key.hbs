@@ -1,0 +1,7 @@
+const {{ upperCase query-name }} = '{{ dashCase query-name }}';
+
+export const {{ upperCase query-name }}_QUERY_KEY = {
+  all: [{{ upperCase query-name }}] as const,
+  list: () => [...{{ upperCase query-name }}_QUERY_KEY.all, 'list'] as const,
+  item: (args: unknown[]) => [...{{ upperCase query-name }}_QUERY_KEY.list(), ...args] as const,
+};
