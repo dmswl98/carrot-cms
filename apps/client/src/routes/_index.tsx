@@ -5,5 +5,5 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Page() {
-  return <h1>carrot-cms</h1>;
+  return <h1 className="text-2xl text-blue-600">carrot-cms</h1>;
 }
