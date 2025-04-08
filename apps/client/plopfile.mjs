@@ -1,8 +1,6 @@
-import type { PlopTypes } from "@turbo/gen";
-
-export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  plop.setGenerator("query", {
-    description: "Adds a new query templates",
+export default function generator(plop) {
+  plop.setGenerator("Create component template files", {
+    description: "Create templates",
     prompts: [
       {
         type: "input",
@@ -13,37 +11,36 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: "list",
         name: "folder",
         message: "Which folder do you want to create?",
-        choices: ["src/api", "src/domains/{query-name}/api"],
+        choices: ["src/api", "src/services/{query-name}/api"],
       },
     ],
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    actions: (data: any) => {
+    actions: (data) => {
       const selectedFolder = data?.folder || "";
-      const isDomainsFolder = selectedFolder.includes("domains");
+      const isDomainsFolder = selectedFolder.includes("services");
       const folderPath = isDomainsFolder
-        ? "src/domains/{{query-name}}/api"
+        ? "src/services/{{query-name}}/api"
         : "{{folder}}/{{query-name}}";
 
       const actions = [
         {
           type: "add",
           path: `${folderPath}/types.ts`,
-          templateFile: "templates/query/types.hbs",
+          templateFile: "src/templates/query/types.hbs",
         },
         {
           type: "add",
           path: `${folderPath}/query/queryKey.ts`,
-          templateFile: "templates/query/query-key.hbs",
+          templateFile: "src/templates/query/query-key.hbs",
         },
         {
           type: "add",
           path: `${folderPath}/query/mutations.ts`,
-          templateFile: "templates/query/mutations.hbs",
+          templateFile: "src/templates/query/mutations.hbs",
         },
         {
           type: "add",
           path: `${folderPath}/query/queries.ts`,
-          templateFile: "templates/query/queries.hbs",
+          templateFile: "src/templates/query/queries.hbs",
         },
       ];
 
